@@ -9,6 +9,6 @@
 * 2. Crear una página (inputs.html), en el cual se aplique maquetado usando Bootstrap y contenga todos los elementos input HTML (ver https://www.w3schools.com/html/html_form_input_types.asp), y cada elemento input un botón que al presionarlo despliegue el valor el input en un javascript alert.
 
 * Ejemplo 
-!["Ejemplo"](Img.png)
+!["Ejemplo"](img.png)
 * Ejemplo 
-!["Ejemplo"](Img2.png)
+!["Ejemplo"](img2.png)
