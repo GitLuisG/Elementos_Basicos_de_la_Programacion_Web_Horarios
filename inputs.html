@@ -1,18 +1,46 @@
 <html>
     <head>
         <title>Sistema de Horarios</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <input id="name" type="text" placeholder="Nombre del alumno" required><br>
-        <input id="Matricula" type="number" placeholder="Matricula" required><br>
-        <input id="inicio" type="month" placeholder="inicio Escolar" required><br>
-        <input id="fin" type="month" placeholder="fin Escolar" required><br>
-        <label for="ProAca">Programa Académico</label>
-        <select id="ProAca" required>
-            <option>Ninguno</option>
-            <option value="ITI">INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN</option>
-        </select>
-        <input type="button" id="btnEnviar">
+        <div class="container">
+            <div id="Panel" >
+                <label for="name">Alumno</label>
+                <input id="name" class="form-control" type="text" placeholder="Nombre del alumno" required><br>
+                <label for="Matricula">Matricula</label>
+                <input id="Matricula" class="form-control" type="number" placeholder="Matricula" required><br>
+                <label for="inicio"> Inicio Escolar</label>
+                <input id="inicio" class="form-control" type="date" placeholder="inicio Escolar" required><br>
+                <label for="fin">Fin Escolar</label>
+                <input id="fin" class="form-control" type="date" placeholder="fin Escolar" required><br>
+                <label for="Plan">Programa Académico</label>
+                <select id="Plan" class="form-control" required>
+                    <option>Ninguno</option>
+                    <option value="ITI">INGENIERÍA EN TECNOLOGÍAS DE LA INFORMACIÓN</option>
+                </select><br>
+                <input type="button" id="btnEnviar" value="Generar Horario">
+                </div>
+                <div>
+                    <div class="jumbotron text-center">
+                        <h5>HORARIO DE CLASES</h5>
+                        <h6>Framework de Diseño</h6>
+                    </div>
+                    <label><h4 id="alumno"></h4></label><br>
+                    <label id="matricula"></label><br>
+                    <label id="proaca"></label><br>
+                    <label id="plan"></label>
+                    <label id="sede"></label>
+                    <tabla id="tabla-datos">
+                        <table id="tabla-dinamica">
+                            <tbody id="tabla-dinamica-tbody"></tbody>
+                    </table>
+                    <label id="Credit"></label>
+                </div>
+    </div>
     </body>
     <script src="inputs.js"></script>
 </html>
