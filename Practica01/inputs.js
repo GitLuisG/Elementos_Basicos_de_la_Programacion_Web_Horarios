@@ -8,7 +8,6 @@ class DatosAlumno{
         this.mesfinal = mesfinal;
         this.Plan = Plan;
         this.year = year;
-        //document.write("Conectado");
         
     }
     GetAlumno(){
@@ -38,16 +37,14 @@ function btnEnviar_click(e) {
     const txtfin = new Date(document.getElementById('fin').value);
     const txtYear = 2010;
     const txtPlan = document.getElementById('Plan');
-    inputs = new DatosAlumno(txtAlumno, txtMatricula, txtinicio.getMonth(), txtfin.getMonth(),txtPlan,txtYear);
-    document.getElementById('Panel').innerHTML =""; 
-    btnCrearTabla_click();
-    print();
-    
+    //if(isEmpty(txtAlumno.value) || isEmpty(txtMatricula.value) || isEmpty(txtinicio.getMonth()) || isEmpty(txtfin.getMonth()) || isEmpty(txtPlan) || isEmpty(txtYear.value)){
+        inputs = new DatosAlumno(txtAlumno, txtMatricula, txtinicio.getMonth(), txtfin.getMonth(),txtPlan,txtYear);
+        document.getElementById('Panel').innerHTML ="";
+        btnCrearTabla_click();
+    //}
 }
 
 const tablaDinamicaTbody = document.getElementById('tabla-dinamica-tbody');
-//btnEnviar.addEventListener('click', btnCrearTabla_click);
-DiasSemana= new Array("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
 
 Materias = ["[Materia][Profesor]","Grupo",
 [
@@ -58,7 +55,8 @@ Materias = ["[Materia][Profesor]","Grupo",
     ["[ADMINISTRACIÓN DE SISTEMAS INTEGRALES]-[ISRAEL PULIDO PICAZO]"],
     ["[MINERÍA DE DATOS APLICADA]-[MARIO ALBERTO GÓMEZ RODRÍGUEZ]"],
     ["[INGLÉS V]-[HOMAR GARCIA GALVAN]"],
-],["ITI-07434","ITI-07435","ITI-07436","ITI-07437","ITI-07438","ITI-07439","ITI-07467"],
+],
+["ITI-07434","ITI-07435","ITI-07436","ITI-07437","ITI-07438","ITI-07439","ITI-07467"],
 [
     ["Lunes      ","Martes     ","Miercoles  ","Jueves     ", "Viernes    ","Sabado"],
     ["13:00-13:54","Libre      ","14:00-14:54","13:00-13:54", "Libre      ","       "],
@@ -71,15 +69,12 @@ Materias = ["[Materia][Profesor]","Grupo",
 ]
 ];
 
+
 function btnCrearTabla_click(e) {
     let r = 8;
     let c = 9;
-    let temp=0;
-    let temp2=0;
-    let temp3=0;
-    let band = 0;
+    let temp=0,temp2=0,temp3=0,band=0;
     if (r <= 0 || c <= 0) return;
-    //tablaDinamicaTbody.innerHTML = '';  // borramos la tabla actual.
     let rowsFragment = document.createDocumentFragment();
     document.getElementById("alumno").innerHTML = "Alumno: "+inputs.GetAlumno();
     document.getElementById("matricula").innerHTML = "Matricula: "+inputs.GetMatricula();
@@ -109,7 +104,7 @@ function btnCrearTabla_click(e) {
             if(ir == 0 && ic == 1){
                 td.textContent = `Grupo`;
             }
-            if(ir == 0 && ic != 0 && ic != 1 && i < DiasSemana.length){
+            if(ir == 0 && ic != 0 && ic != 1 && i < Materias[3][0].length){
                 if(temp2 < 8){
                     td.textContent = `${Materias[4][0][temp2++]}`;
                 }
